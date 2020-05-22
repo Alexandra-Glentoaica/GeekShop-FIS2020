@@ -12,17 +12,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2adbbe;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
    <children>
-      <TextField layoutX="243.0" layoutY="113.0" />
+      <TextField fx:id="idEntry" layoutX="243.0" layoutY="113.0" />
       <Label layoutX="193.0" layoutY="55.0" prefHeight="28.0" prefWidth="233.0" text="Welcome to GeekShop!" textAlignment="CENTER">
          <font>
             <Font size="19.0" />
          </font></Label>
       <Label layoutX="186.0" layoutY="93.0" prefHeight="65.0" prefWidth="34.0" text="ID:" />
       <Label layoutX="166.0" layoutY="161.0" prefHeight="17.0" prefWidth="84.0" text="Password:" />
-      <Button layoutX="359.0" layoutY="225.0" mnemonicParsing="false" onAction="#buton" prefHeight="17.0" prefWidth="49.0" text="Login" textFill="#170e05" />
-      <PasswordField layoutX="243.0" layoutY="157.0" />
+      <Button layoutX="359.0" layoutY="225.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="49.0" text="Login" textFill="#170e05" />
+      <PasswordField fx:id="passEntry" layoutX="243.0" layoutY="157.0" />
       <Text layoutX="416.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Not a member?" wrappingWidth="94.58206176757812" />
-      <Button layoutX="520.0" layoutY="10.0" mnemonicParsing="false" text="Sign up" textFill="#352121" />
+      <Button layoutX="520.0" layoutY="10.0" mnemonicParsing="false" onAction="#signUpButton" text="Sign up" textFill="#352121" />
       <ImageView fitHeight="28.0" fitWidth="34.0" layoutX="138.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons8-user-male-30.png" />
