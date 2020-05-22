@@ -1,5 +1,7 @@
 package Controllers;
 
+import Models.Client;
+import Services.ClientServices;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,6 +10,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class SignUpController {
     @FXML
@@ -25,16 +29,12 @@ public class SignUpController {
 
     @FXML
     public void signUpButton(){
-        String id = idField.getText();
-        String pass = passField.getText();
-        String r = role.getValue();
+        Client c = new Client(idField.getText(), passField.getText(), role.getValue());
 
-        if(role.getValue().equals("Customer")){
-            //impl add customer
-        }
-        else if(role.getValue().equals("Administrator")){
-            //impl add administrator
-        }
+        ArrayList<Client> clients = ClientServices.getClients();
+        clients.add(c);
+
+        ClientServices.writeClients();
     }
 
     @FXML
