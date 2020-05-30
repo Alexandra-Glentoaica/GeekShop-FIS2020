@@ -1,5 +1,6 @@
 package Controllers;
 
+import Exceptions.IncorrectDataException;
 import Models.Client;
 import Services.ClientServices;
 import javafx.fxml.FXML;
@@ -53,10 +54,14 @@ public class LoginController {
             }
         }
 
-        if(flag){
-            System.out.println("te duce la pagina corespunzatoare");
-        }else{
-            label.setText("One of the identifying elements is invalid! Please try again!");
+        try{
+            if(flag){
+                System.out.println("te duce la pagina corespunzatoare");
+            }else{
+                throw new IncorrectDataException();
+            }
+        }catch (Exception e){
+            System.out.println(e);
         }
     }
 

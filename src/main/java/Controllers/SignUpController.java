@@ -1,5 +1,6 @@
 package Controllers;
 
+import Exceptions.UserAlreadyExistsException;
 import Models.Client;
 import Services.ClientServices;
 import javafx.fxml.FXML;
@@ -41,10 +42,14 @@ public class SignUpController {
             }
         }
 
-        if(flag){
-            System.out.println("exista deja");
-        }else{
-            clients.add(c);
+        try{
+            if(flag){
+                throw new UserAlreadyExistsException();
+            }else{
+                clients.add(c);
+            }
+        }catch (Exception e){
+            System.out.println(e);
         }
 
         ClientServices.writeClients();
