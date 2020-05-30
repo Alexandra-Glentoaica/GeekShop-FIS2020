@@ -8,6 +8,7 @@ import org.json.simple.parser.JSONParser;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Base64;
 
 public class ClientServices {
     private static ArrayList<Client> clients;
@@ -28,6 +29,12 @@ public class ClientServices {
         }catch (Exception e){
             System.out.println(e);
         }
+    }
+
+    public static String encodePassword(String password){
+        String result = Base64.getEncoder().encodeToString(password.getBytes());
+
+        return result;
     }
 
     public static void writeClients() {

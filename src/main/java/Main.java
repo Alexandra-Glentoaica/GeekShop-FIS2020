@@ -14,8 +14,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        ClientServices.loadClients();
-
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
         primaryStage.setTitle("Login Screen");
         primaryStage.setScene(new Scene(root,600,500));

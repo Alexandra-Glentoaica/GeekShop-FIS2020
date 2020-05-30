@@ -29,10 +29,23 @@ public class SignUpController {
 
     @FXML
     public void signUpButton(){
-        Client c = new Client(idField.getText(), passField.getText(), role.getValue());
+        Client c = new Client(idField.getText(), ClientServices.encodePassword(passField.getText()), role.getValue());
 
         ArrayList<Client> clients = ClientServices.getClients();
-        clients.add(c);
+
+        boolean flag = false;
+
+        for(Client i:clients){
+            if(i.getUsername().equals(c.getUsername())){
+                flag = true;
+            }
+        }
+
+        if(flag){
+            System.out.println("exista deja");
+        }else{
+            clients.add(c);
+        }
 
         ClientServices.writeClients();
     }
