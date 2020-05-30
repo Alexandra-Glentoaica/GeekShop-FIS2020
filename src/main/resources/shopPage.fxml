@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutX="81.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn prefWidth="198.66665649414062" text="Denumire produs" />
+        </columns>
+      </TableView>
+      <Button layoutX="344.0" layoutY="51.0" mnemonicParsing="false" text="Afisare" />
+      <ChoiceBox layoutX="170.0" layoutY="51.0" prefWidth="150.0" />
+      <Label layoutX="54.0" layoutY="55.0" text="Alegeti categoria:" />
+      <Button layoutX="311.0" layoutY="143.0" mnemonicParsing="false" text="Afisare detalii produs" />
+      <Button layoutX="28.0" layoutY="14.0" mnemonicParsing="false" text="Log Out" />
+   </children>
+</AnchorPane>
