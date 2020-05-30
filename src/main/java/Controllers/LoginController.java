@@ -61,7 +61,7 @@ public class LoginController {
                 throw new IncorrectDataException();
             }
         }catch (Exception e){
-            System.out.println(e);
+            label.setText("One of the identifying elements is invalid! Please try again!");
         }
     }
 
