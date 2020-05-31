@@ -1,5 +1,6 @@
 package Controllers;
 
+import Services.ProductServices;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +14,7 @@ public class ShopPageController {
 
     @FXML
     public void initialize(){
+        ProductServices.loadProducts();
         choiceBox.getItems().addAll("Books", "Funko-Pop Figurines", "Geek Accessories", "Stationery", "Board Games");
         choiceBox.setValue("Books");
     }

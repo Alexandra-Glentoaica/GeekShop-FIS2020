@@ -58,8 +58,8 @@ public class Book extends Product {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "author='" + author + '\'' +
+        return super.toString() +
+                ", author='" + author + '\'' +
                 ", language='" + language + '\'' +
                 ", publisher='" + publisher + '\'' +
                 '}';

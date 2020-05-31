@@ -58,8 +58,8 @@ public class Item extends Product {
 
     @Override
     public String toString() {
-        return "Item{" +
-                "material='" + material + '\'' +
+        return super.toString() +
+                ", material='" + material + '\'' +
                 ", color='" + color + '\'' +
                 ", size='" + size + '\'' +
                 '}';

@@ -42,8 +42,7 @@ public abstract class Product {
         return "Product{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
-                ", type='" + type + '\'' +
-                '}';
+                ", type='" + type + '\'';
     }
 
     @Override
