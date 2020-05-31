@@ -16,7 +16,8 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 public class ShopPageController {
-    private ArrayList<Product> products = new ArrayList<>();
+    private static ArrayList<Product> products = new ArrayList<>();
+    private static Product selected = null;
 
     @FXML
     private ChoiceBox choiceBox;
@@ -32,6 +33,7 @@ public class ShopPageController {
 
         choiceBox.getItems().addAll("Books", "Funko-Pop Figurines", "Geek Accessories", "Stationery", "Board Games");
         choiceBox.setValue("Books");
+        this.afisare();
     }
 
     @FXML
@@ -63,6 +65,24 @@ public class ShopPageController {
 
     @FXML
     public void afisareDetalii(){
+        selected = tableView.getSelectionModel().getSelectedItem();
 
+        if(selected.getType().equals("Books")){
+            //pagina books
+        }else{
+            try{
+                Stage primaryStage = (Stage)choiceBox.getScene().getWindow();
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("viewItem.fxml"));
+                primaryStage.setTitle("Item Details");
+                primaryStage.setScene(new Scene(root,600,500));
+                primaryStage.show();
+            }catch (Exception e){
+                System.out.println(e);
+            }
+        }
+    }
+
+    public static Product getSelected() {
+        return selected;
     }
 }
