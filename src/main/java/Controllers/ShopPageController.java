@@ -13,8 +13,8 @@ public class ShopPageController {
 
     @FXML
     public void initialize(){
-        choiceBox.getItems().addAll("Carti", "Figurine Funko Pop", "Accesorii Geek", "Produse de papetarie", "Board Games");
-        choiceBox.setValue("Carti");
+        choiceBox.getItems().addAll("Books", "Funko-Pop Figurines", "Geek Accessories", "Stationery", "Board Games");
+        choiceBox.setValue("Books");
     }
 
     @FXML

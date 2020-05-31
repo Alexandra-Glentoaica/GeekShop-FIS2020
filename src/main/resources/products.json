@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Computer Architecture",
+    "price": 150,
+    "type": "Books",
+    "author": "Hennessy",
+    "language": "English",
+    "publisher": "Pearson"
+  },
+  {
+    "name": "Object-Oriented Programming",
+    "price": 100,
+    "type": "Books",
+    "author": "Brett McLaughlin",
+    "language": "English",
+    "publisher": "O'Reilly Media"
+  },
+  {
+    "name": "Rockstar Figurine",
+    "price": 50,
+    "type": "Funko-Pop Figurines",
+    "material": "Plastic",
+    "color": "Black",
+    "size": "Small"
+  },
+  {
+    "name": "Funny glasses",
+    "price": 20,
+    "type": "Geek Accessories",
+    "material": "Plastic",
+    "color": "Red",
+    "size": "Big"
+  },
+  {
+    "name": "Colored Paper",
+    "price": 10,
+    "type": "Stationery",
+    "material": "Paper",
+    "color": "Multi-color",
+    "size": "A4"
+  },
+  {
+    "name": "Monopoly",
+    "price": 35,
+    "type": "Board Games",
+    "material": "Cardboard",
+    "color": "Multi-color",
+    "size": "Medium"
+  }
+]

@@ -1,41 +1,39 @@
 package Models;
 
-import java.util.Objects;
-
 public class Book extends Product {
-    private String autor;
-    private String limba;
-    private String editor;
+    private String author;
+    private String language;
+    private String publisher;
 
-    public Book(String name, int price, String type, String autor, String limba, String editor) {
+    public Book(String name, int price, String type, String author, String language, String publisher) {
         super(name, price, type);
-        this.autor = autor;
-        this.limba = limba;
-        this.editor = editor;
+        this.author = author;
+        this.language = language;
+        this.publisher = publisher;
     }
 
-    public String getAutor() {
-        return autor;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setAutor(String autor) {
-        this.autor = autor;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public String getLimba() {
-        return limba;
+    public String getLanguage() {
+        return language;
     }
 
-    public void setLimba(String limba) {
-        this.limba = limba;
+    public void setLanguage(String language) {
+        this.language = language;
     }
 
-    public String getEditor() {
-        return editor;
+    public String getPublisher() {
+        return publisher;
     }
 
-    public void setEditor(String editor) {
-        this.editor = editor;
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
     }
 
     @Override
@@ -45,25 +43,25 @@ public class Book extends Product {
         if (!super.equals(o)) return false;
         Book book = (Book) o;
 
-        if(!autor.equals(((Book) o).autor)) return false;
-        if(!limba.equals(((Book) o).limba)) return false;
-        return editor.equals(((Book) o).editor);
+        if(!author.equals(((Book) o).author)) return false;
+        if(!language.equals(((Book) o).language)) return false;
+        return publisher.equals(((Book) o).publisher);
     }
 
     @Override
     public int hashCode() {
-        int result = 31*autor.hashCode();
-        result = 31*result + limba.hashCode();
-        result = 31*result + editor.hashCode();
+        int result = 31* author.hashCode();
+        result = 31*result + language.hashCode();
+        result = 31*result + publisher.hashCode();
         return result;
     }
 
     @Override
     public String toString() {
         return "Book{" +
-                "autor='" + autor + '\'' +
-                ", limba='" + limba + '\'' +
-                ", editor='" + editor + '\'' +
+                "author='" + author + '\'' +
+                ", language='" + language + '\'' +
+                ", publisher='" + publisher + '\'' +
                 '}';
     }
 }

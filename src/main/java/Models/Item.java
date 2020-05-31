@@ -1,17 +1,15 @@
 package Models;
 
-import java.util.Objects;
-
 public class Item extends Product {
     private String material;
-    private String culoare;
-    private String dimensiune;
+    private String color;
+    private String size;
 
-    public Item(String name, int price, String type, String material, String culoare, String dimensiune) {
+    public Item(String name, int price, String type, String material, String color, String size) {
         super(name, price, type);
         this.material = material;
-        this.culoare = culoare;
-        this.dimensiune = dimensiune;
+        this.color = color;
+        this.size = size;
     }
 
     public String getMaterial() {
@@ -22,20 +20,20 @@ public class Item extends Product {
         this.material = material;
     }
 
-    public String getCuloare() {
-        return culoare;
+    public String getColor() {
+        return color;
     }
 
-    public void setCuloare(String culoare) {
-        this.culoare = culoare;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public String getDimensiune() {
-        return dimensiune;
+    public String getSize() {
+        return size;
     }
 
-    public void setDimensiune(String dimensiune) {
-        this.dimensiune = dimensiune;
+    public void setSize(String size) {
+        this.size = size;
     }
 
     @Override
@@ -46,15 +44,15 @@ public class Item extends Product {
         Item item = (Item) o;
 
         if(!material.equals(((Item) o).material)) return false;
-        if(!culoare.equals(((Item) o).culoare)) return false;
-        return dimensiune.equals(((Item) o).dimensiune);
+        if(!color.equals(((Item) o).color)) return false;
+        return size.equals(((Item) o).size);
     }
 
     @Override
     public int hashCode() {
         int result = 31*material.hashCode();
-        result = 31*result + culoare.hashCode();
-        result = 31*result + dimensiune.hashCode();
+        result = 31*result + color.hashCode();
+        result = 31*result + size.hashCode();
         return result;
     }
 
@@ -62,8 +60,8 @@ public class Item extends Product {
     public String toString() {
         return "Item{" +
                 "material='" + material + '\'' +
-                ", culoare='" + culoare + '\'' +
-                ", dimensiune='" + dimensiune + '\'' +
+                ", color='" + color + '\'' +
+                ", size='" + size + '\'' +
                 '}';
     }
 }
