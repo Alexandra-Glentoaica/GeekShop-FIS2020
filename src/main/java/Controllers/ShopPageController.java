@@ -12,6 +12,12 @@ public class ShopPageController {
     private ChoiceBox choiceBox;
 
     @FXML
+    public void initialize(){
+        choiceBox.getItems().addAll("Carti", "Figurine Funko Pop", "Accesorii Geek", "Produse de papetarie", "Board Games");
+        choiceBox.setValue("Carti");
+    }
+
+    @FXML
     public void logoutButton(){
         try{
             Stage primaryStage = (Stage)choiceBox.getScene().getWindow();
