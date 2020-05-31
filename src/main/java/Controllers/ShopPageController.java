@@ -68,7 +68,15 @@ public class ShopPageController {
         selected = tableView.getSelectionModel().getSelectedItem();
 
         if(selected.getType().equals("Books")){
-            //pagina books
+            try{
+                Stage primaryStage = (Stage)choiceBox.getScene().getWindow();
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("viewBook.fxml"));
+                primaryStage.setTitle("Book Details");
+                primaryStage.setScene(new Scene(root,600,500));
+                primaryStage.show();
+            }catch (Exception e){
+                System.out.println(e);
+            }
         }else{
             try{
                 Stage primaryStage = (Stage)choiceBox.getScene().getWindow();

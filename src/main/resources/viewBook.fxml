@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Controllers.ViewBookController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ViewBookController">
+   <children>
+      <Button layoutX="43.0" layoutY="32.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+      <Label layoutX="117.0" layoutY="92.0" text="Name:" />
+      <Label layoutX="117.0" layoutY="119.0" text="Price:" />
+      <Label layoutX="117.0" layoutY="143.0" text="Type:" />
+      <Label layoutX="117.0" layoutY="183.0" text="Author:" />
+      <Label layoutX="117.0" layoutY="210.0" text="Language:" />
+      <Label layoutX="117.0" layoutY="237.0" text="Publisher:" />
+      <Label fx:id="nameLabel" layoutX="231.0" layoutY="92.0" text="Label" />
+      <Label fx:id="priceLabel" layoutX="231.0" layoutY="119.0" text="Label" />
+      <Label fx:id="typeLabel" layoutX="231.0" layoutY="143.0" text="Label" />
+      <Label fx:id="authorLabel" layoutX="231.0" layoutY="183.0" text="Label" />
+      <Label fx:id="languageLabel" layoutX="231.0" layoutY="210.0" text="Label" />
+      <Label fx:id="publisherLabel" layoutX="231.0" layoutY="237.0" text="Label" />
+   </children>
 </AnchorPane>
