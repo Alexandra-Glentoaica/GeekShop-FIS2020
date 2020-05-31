@@ -52,4 +52,8 @@ public class ProductServices {
             System.out.println(e);
         }
     }
+
+    public static ArrayList<Product> getProducts() {
+        return products;
+    }
 }
