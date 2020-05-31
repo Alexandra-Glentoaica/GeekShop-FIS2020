@@ -1,3 +1,4 @@
+import Models.Product;
 import Services.ClientServices;
 import javafx.application.Application;
 import javafx.stage.Stage;

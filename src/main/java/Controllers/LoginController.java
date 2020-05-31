@@ -47,16 +47,30 @@ public class LoginController {
     public void loginButton(){
         ArrayList<Client> clients = ClientServices.getClients();
         boolean flag = false;
+        String r = null;
 
         for(Client i:clients){
             if(idEntry.getText().equals(i.getUsername())&&ClientServices.encodePassword(passEntry.getText()).equals(i.getPassword())){
                 flag = true;
+                r = i.getRole();
             }
         }
 
         try{
             if(flag){
-                System.out.println("te duce la pagina corespunzatoare");
+                if(r.equals("Customer")){
+                    try{
+                        Stage primaryStage = (Stage)idEntry.getScene().getWindow();
+                        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("shopPage.fxml"));
+                        primaryStage.setTitle("Shop Page");
+                        primaryStage.setScene(new Scene(root,600,500));
+                        primaryStage.show();
+                    }catch (Exception e){
+                        System.out.println(e);
+                    }
+                }else{
+                    System.out.println("te duce la admin page");
+                }
             }else{
                 throw new IncorrectDataException();
             }
