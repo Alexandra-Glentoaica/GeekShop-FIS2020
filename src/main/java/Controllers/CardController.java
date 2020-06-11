@@ -38,7 +38,15 @@ public class CardController {
             alertLabel.setText("Incorrect data");
         }
         else{
-            //done
+            try{
+                Stage primaryStage = (Stage)numberField.getScene().getWindow();
+                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("done.fxml"));
+                primaryStage.setTitle("Order Placed");
+                primaryStage.setScene(new Scene(root,600,500));
+                primaryStage.show();
+            }catch (Exception e){
+                System.out.println(e);
+            }
         }
     }
 }

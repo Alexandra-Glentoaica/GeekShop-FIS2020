@@ -46,7 +46,15 @@ public class FormController {
         if(date.length()>4) {
             if (Integer.parseInt(date.substring(date.length() - 4)) < 2002) {
                 if (choiceBox.getSelectionModel().getSelectedItem().toString().equals("Cash")) {
-                    //done
+                    try{
+                        Stage primaryStage = (Stage)dateField.getScene().getWindow();
+                        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("done.fxml"));
+                        primaryStage.setTitle("Order Placed");
+                        primaryStage.setScene(new Scene(root,600,500));
+                        primaryStage.show();
+                    }catch (Exception e){
+                        System.out.println(e);
+                    }
                 } else if (choiceBox.getSelectionModel().getSelectedItem().toString().equals("Credit Card")) {
                     try {
                         Stage primaryStage = (Stage) choiceBox.getScene().getWindow();
