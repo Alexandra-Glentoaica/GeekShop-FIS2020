@@ -31,20 +31,22 @@ public class ProductServices {
                 if(type.equals("Books")){
                     String name = jo.get("name").toString();
                     int price = Integer.parseInt(jo.get("price").toString());
+                    int quantity = Integer.parseInt(jo.get("quantity").toString());
                     String author = jo.get("author").toString();
                     String language = jo.get("language").toString();
                     String publisher = jo.get("publisher").toString();
 
-                    Book b = new Book(name,price,type,author,language,publisher);
+                    Book b = new Book(name,price,type,quantity,author,language,publisher);
                     products.add(b);
                 }else {
                     String name = jo.get("name").toString();
                     int price = Integer.parseInt(jo.get("price").toString());
+                    int quantity = Integer.parseInt(jo.get("quantity").toString());
                     String material = jo.get("material").toString();
                     String color = jo.get("color").toString();
                     String size = jo.get("size").toString();
 
-                    Item i = new Item(name,price,type,material,color,size);
+                    Item i = new Item(name,price,type,quantity,material,color,size);
                     products.add(i);
                 }
             }
