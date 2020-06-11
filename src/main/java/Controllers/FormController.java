@@ -43,10 +43,24 @@ public class FormController {
     @FXML
     public void buyButton(){
         String date = dateField.getText();
-        if(Integer.parseInt(date.substring(date.length()-4))<2002){
-            //done
-        }else{
-            alertLabel.setText("Minimum age is 18!");
+        if(date.length()>4) {
+            if (Integer.parseInt(date.substring(date.length() - 4)) < 2002) {
+                if (choiceBox.getSelectionModel().getSelectedItem().toString().equals("Cash")) {
+                    //done
+                } else if (choiceBox.getSelectionModel().getSelectedItem().toString().equals("Credit Card")) {
+                    try {
+                        Stage primaryStage = (Stage) choiceBox.getScene().getWindow();
+                        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("card.fxml"));
+                        primaryStage.setTitle("Card Information");
+                        primaryStage.setScene(new Scene(root, 600, 500));
+                        primaryStage.show();
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                }
+            } else {
+                alertLabel.setText("Minimum age is 18!");
+            }
         }
     }
 }
