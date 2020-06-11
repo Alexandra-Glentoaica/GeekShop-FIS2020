@@ -40,7 +40,7 @@ public class BuyPageController {
     @FXML
     public void formButton(){
         quantity = Integer.parseInt(textField.getText());
-        if(quantity<ShopPageController.getSelected().getQuantity()){
+        if(quantity<=ShopPageController.getSelected().getQuantity()){
             try{
                 Stage primaryStage = (Stage)label.getScene().getWindow();
                 Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("form.fxml"));
