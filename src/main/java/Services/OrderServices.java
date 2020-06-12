@@ -50,4 +50,8 @@ public class OrderServices {
             }
         }
     }
+
+    public static ArrayList<Order> getOrders() {
+        return orders;
+    }
 }

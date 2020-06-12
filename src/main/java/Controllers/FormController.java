@@ -1,5 +1,7 @@
 package Controllers;
 
+import Models.Order;
+import Services.OrderServices;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,7 +11,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class FormController {
+    private static String name;
+    private static String address;
+    private static String date;
+    private static String payment;
+
     @FXML
     private TextField nameField;
     @FXML
@@ -42,7 +51,17 @@ public class FormController {
 
     @FXML
     public void buyButton() {
-        if (choiceBox.getSelectionModel().getSelectedItem().toString().equals("Cash")) {
+        payment = choiceBox.getSelectionModel().getSelectedItem().toString();
+        if (payment.equals("Cash")) {
+            name = nameField.getText();
+            address = adressField.getText();
+            date = dateField.getText();
+
+            ArrayList<Order> orders = OrderServices.getOrders();
+            Order o = new Order("pending", ShopPageController.getSelected().getName(), BuyPageController.getQuantity(), name, address, date, payment);
+            orders.add(o);
+            OrderServices.writeOrders();
+
             try {
                 Stage primaryStage = (Stage) dateField.getScene().getWindow();
                 Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("done.fxml"));
@@ -52,7 +71,7 @@ public class FormController {
             } catch (Exception e) {
                 System.out.println(e);
             }
-        } else if (choiceBox.getSelectionModel().getSelectedItem().toString().equals("Credit Card")) {
+        } else if (payment.equals("Credit Card")) {
             try {
                 Stage primaryStage = (Stage) choiceBox.getScene().getWindow();
                 Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("card.fxml"));
