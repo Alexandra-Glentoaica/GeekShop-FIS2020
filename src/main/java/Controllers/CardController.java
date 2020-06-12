@@ -1,7 +1,9 @@
 package Controllers;
 
 import Models.Order;
+import Models.Product;
 import Services.OrderServices;
+import Services.ProductServices;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -47,6 +49,10 @@ public class CardController {
             Order o = new Order("pending", ShopPageController.getSelected().getName(), BuyPageController.getQuantity(), FormController.getName(), FormController.getAddress(), FormController.getDate(), FormController.getPayment(), numberField.getText(), dateField.getText(), cvvField.getText());
             orders.add(o);
             OrderServices.writeOrders();
+
+            Product p = ShopPageController.getSelected();
+            p.setQuantity(p.getQuantity() - BuyPageController.getQuantity());
+            ProductServices.writeProducts();
 
             try{
                 Stage primaryStage = (Stage)numberField.getScene().getWindow();
