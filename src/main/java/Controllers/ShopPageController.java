@@ -90,6 +90,20 @@ public class ShopPageController {
         }
     }
 
+    @FXML
+    public void buyButton(){
+        selected = tableView.getSelectionModel().getSelectedItem();
+        try{
+            Stage primaryStage = (Stage)choiceBox.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("buyPage.fxml"));
+            primaryStage.setTitle("Buy Page");
+            primaryStage.setScene(new Scene(root,600,500));
+            primaryStage.show();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
     public static Product getSelected() {
         return selected;
     }

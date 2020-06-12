@@ -5,8 +5,8 @@ public class Item extends Product {
     private String color;
     private String size;
 
-    public Item(String name, int price, String type, String material, String color, String size) {
-        super(name, price, type);
+    public Item(String name, int price, String type, int quantity, String material, String color, String size) {
+        super(name, price, type, quantity);
         this.material = material;
         this.color = color;
         this.size = size;

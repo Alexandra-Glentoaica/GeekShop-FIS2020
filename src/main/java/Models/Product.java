@@ -6,11 +6,13 @@ public abstract class Product {
     private String name;
     private int price;
     private String type;
+    private int quantity;
 
-    public Product(String name, int price, String type) {
+    public Product(String name, int price, String type, int quantity) {
         this.name = name;
         this.price = price;
         this.type = type;
+        this.quantity = quantity;
     }
 
     public String getName() {
@@ -37,12 +39,22 @@ public abstract class Product {
         this.type = type;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
-                ", type='" + type + '\'';
+                ", type='" + type + '\'' +
+                ", quantity='" + quantity + '\''
+                ;
     }
 
     @Override
@@ -53,6 +65,7 @@ public abstract class Product {
 
         if (!name.equals(((Product) o).name)) return false;
         if (!type.equals(((Product) o).type)) return false;
+        if (quantity!=((Product)o).quantity) return false;
         return price == ((Product) o).price;
     }
 
@@ -61,6 +74,7 @@ public abstract class Product {
         int result = 31*name.hashCode();
         result = 31*result + price;
         result = 31*result + type.hashCode();
+        result = 31*result + quantity;
         return result;
     }
 }
