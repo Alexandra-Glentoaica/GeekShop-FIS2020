@@ -52,11 +52,11 @@ public class FormController {
     @FXML
     public void buyButton() {
         payment = choiceBox.getSelectionModel().getSelectedItem().toString();
-        if (payment.equals("Cash")) {
-            name = nameField.getText();
-            address = adressField.getText();
-            date = dateField.getText();
+        name = nameField.getText();
+        address = adressField.getText();
+        date = dateField.getText();
 
+        if (payment.equals("Cash")) {
             ArrayList<Order> orders = OrderServices.getOrders();
             Order o = new Order("pending", ShopPageController.getSelected().getName(), BuyPageController.getQuantity(), name, address, date, payment);
             orders.add(o);
@@ -82,5 +82,21 @@ public class FormController {
                 System.out.println(e);
             }
         }
+    }
+
+    public static String getName() {
+        return name;
+    }
+
+    public static String getAddress() {
+        return address;
+    }
+
+    public static String getDate() {
+        return date;
+    }
+
+    public static String getPayment() {
+        return payment;
     }
 }

@@ -1,5 +1,6 @@
 import Models.Product;
 import Services.ClientServices;
+import Services.OrderServices;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +16,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        OrderServices.loadOrders();
+
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
         primaryStage.setTitle("Login Screen");
         primaryStage.setScene(new Scene(root,600,500));
