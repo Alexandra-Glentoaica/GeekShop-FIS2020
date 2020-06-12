@@ -17,6 +17,8 @@ import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class LoginController {
+    private static String id;
+
     @FXML
     private TextField idEntry;
     @FXML
@@ -49,6 +51,8 @@ public class LoginController {
         boolean flag = false;
         String r = null;
 
+        id = idEntry.getText();
+
         for(Client i:clients){
             if(idEntry.getText().equals(i.getUsername())&&ClientServices.encodePassword(passEntry.getText()).equals(i.getPassword())){
                 flag = true;
@@ -79,4 +83,11 @@ public class LoginController {
         }
     }
 
+    public static String getId() {
+        return id;
+    }
+
+    public static void setId(String id) {
+        LoginController.id = id;
+    }
 }

@@ -38,6 +38,8 @@ public class ShopPageController {
 
     @FXML
     public void logoutButton(){
+        LoginController.setId(null);
+
         try{
             Stage primaryStage = (Stage)choiceBox.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));

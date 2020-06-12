@@ -46,7 +46,7 @@ public class CardController {
         }
         else{
             ArrayList<Order> orders = OrderServices.getOrders();
-            Order o = new Order("pending", ShopPageController.getSelected().getName(), BuyPageController.getQuantity(), FormController.getName(), FormController.getAddress(), FormController.getDate(), FormController.getPayment(), numberField.getText(), dateField.getText(), cvvField.getText());
+            Order o = new Order(LoginController.getId(), "pending", ShopPageController.getSelected().getName(), BuyPageController.getQuantity(), FormController.getName(), FormController.getAddress(), FormController.getDate(), FormController.getPayment(), numberField.getText(), dateField.getText(), cvvField.getText());
             orders.add(o);
             OrderServices.writeOrders();
 
