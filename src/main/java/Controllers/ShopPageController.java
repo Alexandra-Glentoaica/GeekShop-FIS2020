@@ -106,6 +106,19 @@ public class ShopPageController {
         }
     }
 
+    @FXML
+    public void prevOrders(){
+        try{
+            Stage primaryStage = (Stage)choiceBox.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("prevOrders.fxml"));
+            primaryStage.setTitle("Previous Orders");
+            primaryStage.setScene(new Scene(root,600,500));
+            primaryStage.show();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
     public static Product getSelected() {
         return selected;
     }
