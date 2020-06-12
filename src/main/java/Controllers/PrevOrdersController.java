@@ -16,6 +16,8 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 public class PrevOrdersController {
+    private static Order selected;
+
     @FXML
     private TableView<Order> tableView;
     @FXML
@@ -51,6 +53,20 @@ public class PrevOrdersController {
 
     @FXML
     public void showButton(){
+        selected = tableView.getSelectionModel().getSelectedItem();
 
+        try{
+            Stage primaryStage = (Stage)tableView.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("orderDetails.fxml"));
+            primaryStage.setTitle("Order Details");
+            primaryStage.setScene(new Scene(root,600,500));
+            primaryStage.show();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    public static Order getSelected() {
+        return selected;
     }
 }
