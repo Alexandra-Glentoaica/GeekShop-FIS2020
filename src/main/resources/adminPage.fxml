@@ -3,10 +3,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminPageController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2adbbe;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminPageController">
    <children>
       <Button layoutX="37.0" layoutY="28.0" mnemonicParsing="false" onAction="#logOutButton" text="Log out" />
-      <TableView fx:id="tableView" layoutX="95.0" layoutY="91.0" prefHeight="200.0" prefWidth="249.0">
+      <TableView fx:id="tableView" layoutX="95.0" layoutY="91.0" prefHeight="200.0" prefWidth="249.0" style="-fx-background-color: #db03fc;">
         <columns>
           <TableColumn fx:id="productColumn" prefWidth="175.5999984741211" text="Product" />
           <TableColumn fx:id="quantityColumn" prefWidth="74.0" text="Quantity" />
