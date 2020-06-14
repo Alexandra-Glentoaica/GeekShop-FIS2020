@@ -1,21 +1,36 @@
 package Controllers;
 
+import Models.Order;
 import Models.Product;
+import Services.ProductServices;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class AdminPageController {
     @FXML
     private TableView<Product> tableView;
     @FXML
-    private TableColumn<String,Product> productColumn;
+    private TableColumn<Product,String> productColumn;
     @FXML
-    private TableColumn<Integer,Product> quantityColumn;
+    private TableColumn<Product,String> quantityColumn;
+
+    public void initialize(){
+        ProductServices.loadProducts();
+        ArrayList<Product> products = ProductServices.getProducts();
+
+        tableView.setItems(FXCollections.observableArrayList(products));
+        productColumn.setCellValueFactory(new PropertyValueFactory<Product,String>("name"));
+        quantityColumn.setCellValueFactory(new PropertyValueFactory<Product,String>("quantity"));
+    }
 
     public void logOutButton(){
         LoginController.setId(null);
