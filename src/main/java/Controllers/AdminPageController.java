@@ -16,6 +16,8 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 public class AdminPageController {
+    private static Product selected;
+
     @FXML
     private TableView<Product> tableView;
     @FXML
@@ -47,6 +49,20 @@ public class AdminPageController {
     }
 
     public void changePrice(){
+        selected = tableView.getSelectionModel().getSelectedItem();
 
+        try{
+            Stage primaryStage = (Stage)tableView.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("changePrice.fxml"));
+            primaryStage.setTitle("Change price");
+            primaryStage.setScene(new Scene(root,600,500));
+            primaryStage.show();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    public static Product getSelected() {
+        return selected;
     }
 }
