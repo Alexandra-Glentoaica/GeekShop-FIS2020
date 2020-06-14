@@ -45,4 +45,8 @@ public class AdminPageController {
             System.out.println(e);
         }
     }
+
+    public void changePrice(){
+
+    }
 }
