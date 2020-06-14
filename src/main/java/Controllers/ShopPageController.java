@@ -38,6 +38,8 @@ public class ShopPageController {
 
     @FXML
     public void logoutButton(){
+        LoginController.setId(null);
+
         try{
             Stage primaryStage = (Stage)choiceBox.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
@@ -97,6 +99,19 @@ public class ShopPageController {
             Stage primaryStage = (Stage)choiceBox.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("buyPage.fxml"));
             primaryStage.setTitle("Buy Page");
+            primaryStage.setScene(new Scene(root,600,500));
+            primaryStage.show();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    @FXML
+    public void prevOrders(){
+        try{
+            Stage primaryStage = (Stage)choiceBox.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("prevOrders.fxml"));
+            primaryStage.setTitle("Previous Orders");
             primaryStage.setScene(new Scene(root,600,500));
             primaryStage.show();
         }catch (Exception e){

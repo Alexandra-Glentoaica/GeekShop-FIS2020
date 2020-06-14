@@ -3,6 +3,7 @@ package Models;
 import java.util.Objects;
 
 public class Order {
+    private String id;
     private String status;
     private String product;
     private int quantity;
@@ -14,7 +15,8 @@ public class Order {
     private String expirationDate="";
     private String cvv="";
 
-    public Order(String status, String product, int quantity, String name, String address, String date, String payment) {
+    public Order(String id, String status, String product, int quantity, String name, String address, String date, String payment) {
+        this.id = id;
         this.status = status;
         this.product = product;
         this.quantity = quantity;
@@ -24,7 +26,8 @@ public class Order {
         this.payment = payment;
     }
 
-    public Order(String status, String product, int quantity, String name, String address, String date, String payment, String cardNumber, String expirationDate, String cvv) {
+    public Order(String id, String status, String product, int quantity, String name, String address, String date, String payment, String cardNumber, String expirationDate, String cvv) {
+        this.id = id;
         this.status = status;
         this.product = product;
         this.quantity = quantity;
@@ -117,6 +120,14 @@ public class Order {
         this.cvv = cvv;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -131,7 +142,8 @@ public class Order {
                 payment.equals(order.payment) &&
                 cardNumber.equals(order.cardNumber) &&
                 expirationDate.equals(order.expirationDate) &&
-                cvv.equals(order.cvv);
+                cvv.equals(order.cvv) &&
+                id.equals(order.id);
     }
 
     @Override
@@ -145,13 +157,16 @@ public class Order {
         result = result*31 + cardNumber.hashCode();
         result = result*31 + expirationDate.hashCode();
         result = result*31 + cvv.hashCode();
+        result = result*31 + id.hashCode();
         return result*31 + quantity;
     }
+
 
     @Override
     public String toString() {
         return "Order{" +
-                "status='" + status + '\'' +
+                "id='" + id + '\'' +
+                ", status='" + status + '\'' +
                 ", product='" + product + '\'' +
                 ", quantity=" + quantity +
                 ", name='" + name + '\'' +

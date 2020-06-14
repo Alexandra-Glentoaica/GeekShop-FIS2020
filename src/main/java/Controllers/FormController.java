@@ -60,7 +60,7 @@ public class FormController {
 
         if (payment.equals("Cash")) {
             ArrayList<Order> orders = OrderServices.getOrders();
-            Order o = new Order("pending", ShopPageController.getSelected().getName(), BuyPageController.getQuantity(), name, address, date, payment);
+            Order o = new Order(LoginController.getId(), "pending", ShopPageController.getSelected().getName(), BuyPageController.getQuantity(), name, address, date, payment);
             orders.add(o);
             OrderServices.writeOrders();
 

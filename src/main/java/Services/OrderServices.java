@@ -22,7 +22,7 @@ public class OrderServices {
 
             for(Object order:ja){
                 JSONObject jo = (JSONObject) order;
-                orders.add(new Order(jo.get("status").toString(), jo.get("product").toString(), Integer.parseInt(jo.get("quantity").toString()), jo.get("name").toString(), jo.get("address").toString(), jo.get("date").toString(), jo.get("payment").toString(), jo.get("cardNumber").toString(), jo.get("expirationDate").toString(), jo.get("cvv").toString()));
+                orders.add(new Order(jo.get("id").toString(), jo.get("status").toString(), jo.get("product").toString(), Integer.parseInt(jo.get("quantity").toString()), jo.get("name").toString(), jo.get("address").toString(), jo.get("date").toString(), jo.get("payment").toString(), jo.get("cardNumber").toString(), jo.get("expirationDate").toString(), jo.get("cvv").toString()));
             }
         }catch (Exception e){
             System.out.println(e);
@@ -39,6 +39,7 @@ public class OrderServices {
             for(Order o:orders){
                 JSONObject jo = new JSONObject();
 
+                jo.put("id",o.getId());
                 jo.put("status",o.getStatus());
                 jo.put("product",o.getProduct());
                 jo.put("quantity",o.getQuantity());
