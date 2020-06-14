@@ -73,7 +73,15 @@ public class LoginController {
                         System.out.println(e);
                     }
                 }else{
-                    System.out.println("te duce la admin page");
+                    try{
+                        Stage primaryStage = (Stage)idEntry.getScene().getWindow();
+                        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("adminPage.fxml"));
+                        primaryStage.setTitle("Admin Page");
+                        primaryStage.setScene(new Scene(root,600,500));
+                        primaryStage.show();
+                    }catch (Exception e){
+                        System.out.println(e);
+                    }
                 }
             }else{
                 throw new IncorrectDataException();
