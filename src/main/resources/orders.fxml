@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.OrdersController">
+   <children>
+      <Button layoutX="38.0" layoutY="23.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+      <TableView fx:id="tableView" layoutX="111.0" layoutY="58.0" prefHeight="200.0" prefWidth="235.0">
+        <columns>
+          <TableColumn fx:id="productColumn" prefWidth="150.6666717529297" text="Product" />
+          <TableColumn fx:id="statusColumn" prefWidth="83.33334350585938" text="Status" />
+        </columns>
+      </TableView>
+      <Button layoutX="391.0" layoutY="58.0" mnemonicParsing="false" onAction="#orderDetails" text="Order details" />
+      <Button layoutX="408.0" layoutY="126.0" mnemonicParsing="false" onAction="#acceptButton" text="Accept" />
+      <Button layoutX="406.0" layoutY="174.0" mnemonicParsing="false" onAction="#declineButton" text="Decline" />
+   </children>
+</AnchorPane>
