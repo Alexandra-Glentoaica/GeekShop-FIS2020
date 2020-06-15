@@ -69,11 +69,17 @@ public class OrdersController {
     }
 
     public void acceptButton(){
+        tableView.getSelectionModel().getSelectedItem().setStatus("accepted");
 
+        OrderServices.writeOrders();
+        this.initialize();
     }
 
     public void declineButton(){
+        tableView.getSelectionModel().getSelectedItem().setStatus("declined");
 
+        OrderServices.writeOrders();
+        this.initialize();
     }
 
     public static Order getSelected() {
