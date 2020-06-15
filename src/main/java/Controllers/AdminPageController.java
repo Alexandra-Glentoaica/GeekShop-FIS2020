@@ -62,6 +62,18 @@ public class AdminPageController {
         }
     }
 
+    public void addButton(){
+        try{
+            Stage primaryStage = (Stage)tableView.getScene().getWindow();
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("addProduct.fxml"));
+            primaryStage.setTitle("Add Product");
+            primaryStage.setScene(new Scene(root,600,500));
+            primaryStage.show();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
     public static Product getSelected() {
         return selected;
     }
