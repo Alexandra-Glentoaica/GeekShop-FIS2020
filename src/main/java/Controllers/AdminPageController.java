@@ -62,6 +62,10 @@ public class AdminPageController {
         }
     }
 
+    public void addButton(){
+
+    }
+
     public static Product getSelected() {
         return selected;
     }

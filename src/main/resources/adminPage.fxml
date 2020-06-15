@@ -13,5 +13,6 @@
         </columns>
       </TableView>
       <Button layoutX="404.0" layoutY="91.0" mnemonicParsing="false" onAction="#changePrice" text="Change price" />
+      <Button layoutX="404.0" layoutY="143.0" mnemonicParsing="false" onAction="#addButton" text="+" />
    </children>
 </AnchorPane>
