@@ -29,8 +29,15 @@ public class OrdersController {
     public void initialize(){
         OrderServices.loadOrders();
         ArrayList<Order> orders = OrderServices.getOrders();
+        ArrayList<Order> sortedOrders = new ArrayList<>();
 
-        tableView.setItems(FXCollections.observableArrayList(orders));
+        for(Order i:orders){
+            if(i.getStatus().equals("pending")){
+                sortedOrders.add(i);
+            }
+        }
+
+        tableView.setItems(FXCollections.observableArrayList(sortedOrders));
         productColumn.setCellValueFactory(new PropertyValueFactory<Order,String>("product"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<Order,String>("status"));
     }
