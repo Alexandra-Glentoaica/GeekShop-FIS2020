@@ -69,7 +69,15 @@ public class AddProductController {
                     System.out.println(e);
                 }
             }else{
-
+                try{
+                    Stage primaryStage = (Stage)nameField.getScene().getWindow();
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("addItem.fxml"));
+                    primaryStage.setTitle("Add Item");
+                    primaryStage.setScene(new Scene(root,600,500));
+                    primaryStage.show();
+                }catch (Exception e){
+                    System.out.println(e);
+                }
             }
         }catch (Exception e){
             System.out.println(e);
