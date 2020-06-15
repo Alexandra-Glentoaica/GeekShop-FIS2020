@@ -27,6 +27,8 @@ public class AddProductController {
     private TextField typeField;
     @FXML
     private TextField quantityField;
+    @FXML
+    private Label alertLabel;
 
     public void backButton(){
         try{
@@ -46,6 +48,7 @@ public class AddProductController {
         try{
             for(Product i:p){
                 if(i.getName().equals(nameField.getText())){
+                    alertLabel.setText("Product already exists!");
                     throw new ProductAlreadyExists();
                 }
             }
@@ -56,7 +59,15 @@ public class AddProductController {
             quantity = Integer.parseInt(quantityField.getText());
 
             if(type.equals("Books")){
-
+                try{
+                    Stage primaryStage = (Stage)nameField.getScene().getWindow();
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("addBook.fxml"));
+                    primaryStage.setTitle("Add Book");
+                    primaryStage.setScene(new Scene(root,600,500));
+                    primaryStage.show();
+                }catch (Exception e){
+                    System.out.println(e);
+                }
             }else{
 
             }
