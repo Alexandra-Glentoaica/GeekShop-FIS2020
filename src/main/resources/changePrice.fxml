@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2adbbe;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ChangePriceController">
+   <children>
+      <Button layoutX="29.0" layoutY="23.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+      <Label layoutX="109.0" layoutY="67.0" text="Product:" />
+      <Label layoutX="109.0" layoutY="135.0" text="New price:" />
+      <Label fx:id="nameLabel" layoutX="189.0" layoutY="67.0" />
+      <TextField fx:id="price" layoutX="189.0" layoutY="131.0" />
+      <Button layoutX="247.0" layoutY="187.0" mnemonicParsing="false" onAction="#okButton" text="OK" />
+      <Label layoutX="109.0" layoutY="100.0" text="Current price:" />
+      <Label fx:id="priceLabel" layoutX="189.0" layoutY="100.0" />
+   </children>
+</AnchorPane>
