@@ -16,5 +16,7 @@
       <TextField fx:id="quantityField" layoutX="180.0" layoutY="171.0" />
       <Button layoutX="229.0" layoutY="226.0" mnemonicParsing="false" onAction="#okButton" text="OK" />
       <Label fx:id="alertLabel" layoutX="103.0" layoutY="272.0" />
+      <Label layoutX="21.0" layoutY="263.0" text="Available types: Books, Funko-Pop Figurines, Geek Accessories, Stationery, Board Games" />
+      <Label fx:id="alertLabel" layoutX="21.0" layoutY="289.0" />
    </children>
 </AnchorPane>

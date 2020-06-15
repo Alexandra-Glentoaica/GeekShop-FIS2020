@@ -69,14 +69,18 @@ public class AddProductController {
                     System.out.println(e);
                 }
             }else{
-                try{
-                    Stage primaryStage = (Stage)nameField.getScene().getWindow();
-                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("addItem.fxml"));
-                    primaryStage.setTitle("Add Item");
-                    primaryStage.setScene(new Scene(root,600,500));
-                    primaryStage.show();
-                }catch (Exception e){
-                    System.out.println(e);
+                if(type.equals("Board Games")||type.equals("Stationery")||type.equals("Geek Accessories")||type.equals("Funko-Pop Figurines")){
+                    try{
+                        Stage primaryStage = (Stage)nameField.getScene().getWindow();
+                        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("addItem.fxml"));
+                        primaryStage.setTitle("Add Item");
+                        primaryStage.setScene(new Scene(root,600,500));
+                        primaryStage.show();
+                    }catch (Exception e) {
+                        System.out.println(e);
+                    }
+                }else{
+                    alertLabel.setText("Invalid type!");
                 }
             }
         }catch (Exception e){
