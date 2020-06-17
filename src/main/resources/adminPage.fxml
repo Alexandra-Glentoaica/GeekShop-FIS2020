@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2adbbe;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminPageController">
@@ -12,8 +13,23 @@
           <TableColumn fx:id="quantityColumn" prefWidth="74.0" style="-fx-background-color: #ffcc00;" text="Quantity" />
         </columns>
       </TableView>
-      <Button layoutX="404.0" layoutY="91.0" mnemonicParsing="false" onAction="#changePrice" text="Change price" />
-      <Button layoutX="404.0" layoutY="143.0" mnemonicParsing="false" onAction="#addButton" text="+" />
+      <Button layoutX="405.0" layoutY="91.0" mnemonicParsing="false" onAction="#changePrice" text="Change price" />
+      <Button layoutX="404.0" layoutY="143.0" mnemonicParsing="false" onAction="#addButton" text="Add products" />
       <Button layoutX="403.0" layoutY="265.0" mnemonicParsing="false" onAction="#ordersButton" text="Orders" />
+      <ImageView fitHeight="37.0" fitWidth="32.0" layoutX="372.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-price-64.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="52.0" layoutX="499.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-add-to-collection-80.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="42.0" fitWidth="44.0" layoutX="457.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-checklist-64.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
