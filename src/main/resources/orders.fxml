@@ -3,14 +3,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.OrdersController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2adbbe;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.OrdersController">
    <children>
       <Button layoutX="38.0" layoutY="23.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
-      <TableView fx:id="tableView" layoutX="111.0" layoutY="58.0" prefHeight="200.0" prefWidth="235.0">
+      <TableView fx:id="tableView" layoutX="111.0" layoutY="58.0" prefHeight="200.0" prefWidth="235.0" style="-fx-background-color: #ffcc00;">
         <columns>
-          <TableColumn fx:id="productColumn" prefWidth="150.6666717529297" text="Product" />
-          <TableColumn fx:id="statusColumn" prefWidth="83.33334350585938" text="Status" />
+          <TableColumn fx:id="productColumn" prefWidth="150.6666717529297" style="-fx-background-color: #ffcc00;" text="Product" />
+          <TableColumn fx:id="statusColumn" prefWidth="83.33334350585938" style="-fx-background-color: #ffcc00;" text="Status" />
         </columns>
       </TableView>
       <Button layoutX="391.0" layoutY="58.0" mnemonicParsing="false" onAction="#orderDetails" text="Order details" />

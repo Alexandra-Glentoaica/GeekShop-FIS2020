@@ -3,11 +3,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ShopPageController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2adbbe;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ShopPageController">
    <children>
-      <TableView fx:id="tableView" layoutX="81.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tableView" layoutX="81.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffcc00;">
         <columns>
-          <TableColumn fx:id="nameColumn" prefWidth="198.66665649414062" text="Name" />
+          <TableColumn fx:id="nameColumn" prefWidth="198.66665649414062" style="-fx-background-color: #ffcc00;" text="Name" />
         </columns>
       </TableView>
       <Button layoutX="344.0" layoutY="51.0" mnemonicParsing="false" onAction="#afisare" text="Show" />
