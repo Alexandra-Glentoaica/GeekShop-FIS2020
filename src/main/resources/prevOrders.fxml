@@ -9,7 +9,7 @@
       <Button layoutX="23.0" layoutY="24.0" mnemonicParsing="false" onAction="#backButton" prefHeight="25.0" prefWidth="53.0" text="Back" />
       <TableView fx:id="tableView" layoutX="124.0" layoutY="119.0" prefHeight="186.0" prefWidth="202.0" style="-fx-background-color: #ffcc00;">
         <columns>
-          <TableColumn fx:id="tableColumn" prefWidth="199.0" text="Product" />
+          <TableColumn fx:id="tableColumn" prefWidth="199.0" style="-fx-background-color: #ffcc00;" text="Product" />
         </columns>
       </TableView>
       <Button layoutX="368.0" layoutY="119.0" mnemonicParsing="false" onAction="#showButton" text="Show details" />
