@@ -20,9 +20,12 @@ public class FormController {
     private static String address;
     private static String date;
     private static String payment;
+    private static String mail;
 
     @FXML
     private TextField nameField;
+    @FXML
+    private TextField mailField;
     @FXML
     private TextField adressField;
     @FXML
@@ -57,36 +60,41 @@ public class FormController {
         name = nameField.getText();
         address = adressField.getText();
         date = dateField.getText();
+        mail = mailField.getText();
 
-        if (payment.equals("Cash")) {
-            ArrayList<Order> orders = OrderServices.getOrders();
-            Order o = new Order(LoginController.getId(), "pending", ShopPageController.getSelected().getName(), BuyPageController.getQuantity(), name, address, date, payment);
-            orders.add(o);
-            OrderServices.writeOrders();
+        if(!nameField.getText().equals("")&&!adressField.getText().equals("")&&!dateField.getText().equals("")&&!mailField.getText().equals("")) {
+            if (payment.equals("Cash")) {
+                ArrayList<Order> orders = OrderServices.getOrders();
+                Order o = new Order(LoginController.getId(), "pending", ShopPageController.getSelected().getName(), BuyPageController.getQuantity(), name, address, date, payment,mail);
+                orders.add(o);
+                OrderServices.writeOrders();
 
-            Product p = ShopPageController.getSelected();
-            p.setQuantity(p.getQuantity() - BuyPageController.getQuantity());
-            ProductServices.writeProducts();
+                Product p = ShopPageController.getSelected();
+                p.setQuantity(p.getQuantity() - BuyPageController.getQuantity());
+                ProductServices.writeProducts();
 
-            try {
-                Stage primaryStage = (Stage) dateField.getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("done.fxml"));
-                primaryStage.setTitle("Order Placed");
-                primaryStage.setScene(new Scene(root, 600, 500));
-                primaryStage.show();
-            } catch (Exception e) {
-                System.out.println(e);
+                try {
+                    Stage primaryStage = (Stage) dateField.getScene().getWindow();
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("done.fxml"));
+                    primaryStage.setTitle("Order Placed");
+                    primaryStage.setScene(new Scene(root, 600, 500));
+                    primaryStage.show();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            } else if (payment.equals("Credit Card")) {
+                try {
+                    Stage primaryStage = (Stage) choiceBox.getScene().getWindow();
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("card.fxml"));
+                    primaryStage.setTitle("Card Information");
+                    primaryStage.setScene(new Scene(root, 600, 500));
+                    primaryStage.show();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
             }
-        } else if (payment.equals("Credit Card")) {
-            try {
-                Stage primaryStage = (Stage) choiceBox.getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("card.fxml"));
-                primaryStage.setTitle("Card Information");
-                primaryStage.setScene(new Scene(root, 600, 500));
-                primaryStage.show();
-            } catch (Exception e) {
-                System.out.println(e);
-            }
+        }else{
+            alertLabel.setText("One or more fields are empty");
         }
     }
 
@@ -104,5 +112,9 @@ public class FormController {
 
     public static String getPayment() {
         return payment;
+    }
+
+    public static String getMail() {
+        return mail;
     }
 }

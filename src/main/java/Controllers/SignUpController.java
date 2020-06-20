@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -23,9 +24,13 @@ public class SignUpController {
     private ChoiceBox<String> role;
 
     @FXML
+    private Label label1;
+
+    @FXML
     public void initialize(){
         role.getItems().addAll("Customer", "Administrator");
         role.setValue("Customer");
+        label1.setText("");
     }
 
     @FXML
@@ -49,7 +54,7 @@ public class SignUpController {
                 clients.add(c);
             }
         }catch (Exception e){
-            System.out.println(e);
+            label1.setText("This username is already taken!");
         }
 
         ClientServices.writeClients();
@@ -60,7 +65,7 @@ public class SignUpController {
         try {
             Stage primaryStage = (Stage) idField.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
-            primaryStage.setTitle("Sign Up Screen");
+            primaryStage.setTitle("Login Screen");
             primaryStage.setScene(new Scene(root, 600, 500));
             primaryStage.show();
         }catch (Exception e){

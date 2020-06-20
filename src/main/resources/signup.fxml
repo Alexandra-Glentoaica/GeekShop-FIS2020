@@ -31,5 +31,6 @@
             <Image url="@icons8-comedy-144.png" />
          </image>
       </ImageView>
+      <Label fx:id="label1" layoutX="187.0" layoutY="343.0" text="Label" />
    </children>
 </AnchorPane>

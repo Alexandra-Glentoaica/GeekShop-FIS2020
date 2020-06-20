@@ -45,24 +45,29 @@ public class CardController {
             alertLabel.setText("Incorrect data");
         }
         else{
-            ArrayList<Order> orders = OrderServices.getOrders();
-            Order o = new Order(LoginController.getId(), "pending", ShopPageController.getSelected().getName(), BuyPageController.getQuantity(), FormController.getName(), FormController.getAddress(), FormController.getDate(), FormController.getPayment(), numberField.getText(), dateField.getText(), cvvField.getText());
-            orders.add(o);
-            OrderServices.writeOrders();
+            if(!numberField.getText().equals("")&&!dateField.getText().equals("")&&!cvvField.getText().equals("")) {
+                ArrayList<Order> orders = OrderServices.getOrders();
+                Order o = new Order(LoginController.getId(), "pending", ShopPageController.getSelected().getName(), BuyPageController.getQuantity(), FormController.getName(), FormController.getAddress(), FormController.getDate(), FormController.getPayment(), FormController.getMail(),numberField.getText(), dateField.getText(), cvvField.getText());
+                orders.add(o);
+                OrderServices.writeOrders();
 
-            Product p = ShopPageController.getSelected();
-            p.setQuantity(p.getQuantity() - BuyPageController.getQuantity());
-            ProductServices.writeProducts();
+                Product p = ShopPageController.getSelected();
+                p.setQuantity(p.getQuantity() - BuyPageController.getQuantity());
+                ProductServices.writeProducts();
 
-            try{
-                Stage primaryStage = (Stage)numberField.getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("done.fxml"));
-                primaryStage.setTitle("Order Placed");
-                primaryStage.setScene(new Scene(root,600,500));
-                primaryStage.show();
-            }catch (Exception e){
-                System.out.println(e);
+                try {
+                    Stage primaryStage = (Stage) numberField.getScene().getWindow();
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("done.fxml"));
+                    primaryStage.setTitle("Order Placed");
+                    primaryStage.setScene(new Scene(root, 600, 500));
+                    primaryStage.show();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }else{
+                    alertLabel.setText("One or more fields are empty");
             }
         }
     }
 }
+

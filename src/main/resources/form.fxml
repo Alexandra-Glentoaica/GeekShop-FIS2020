@@ -9,14 +9,14 @@
       <Button layoutX="28.0" layoutY="27.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
       <Label layoutX="124.0" layoutY="77.0" text="Name:" />
       <Label layoutX="124.0" layoutY="107.0" text="Adress:" />
-      <Label layoutX="125.0" layoutY="139.0" text="Date of birth:" />
-      <Label layoutX="125.0" layoutY="173.0" text="Payment method:" />
+      <Label fx:id="Mail" layoutX="125.0" layoutY="139.0" text="Date of birth:" />
+      <Label layoutX="125.0" layoutY="216.0" text="Payment method:" />
       <TextField fx:id="nameField" layoutX="241.0" layoutY="73.0" />
       <TextField fx:id="adressField" layoutX="241.0" layoutY="103.0" />
       <TextField fx:id="dateField" layoutX="241.0" layoutY="135.0" />
       <Button layoutX="422.0" layoutY="251.0" mnemonicParsing="false" onAction="#buyButton" text="Place Order" />
       <Label fx:id="alertLabel" layoutX="100.0" layoutY="255.0" />
-      <ChoiceBox fx:id="choiceBox" layoutX="241.0" layoutY="169.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="choiceBox" layoutX="241.0" layoutY="212.0" prefWidth="150.0" />
       <ImageView fitHeight="37.0" fitWidth="39.0" layoutX="82.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons8-birthday-100.png" />
@@ -32,12 +32,12 @@
             <Image url="@icons8-name-tag-64.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="78.0" layoutX="57.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="78.0" layoutX="56.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons8-expensive-price-48.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="88.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="90.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons8-mastercard-credit-card-64.png" />
          </image>
@@ -45,6 +45,13 @@
       <ImageView fitHeight="35.0" fitWidth="94.0" layoutX="510.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@icons8-ok-100.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="124.0" layoutY="175.0" text="Mail" />
+      <TextField fx:id="mailField" layoutX="241.0" layoutY="171.0" />
+      <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="86.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-mail-contact-100.png" />
          </image>
       </ImageView>
    </children>

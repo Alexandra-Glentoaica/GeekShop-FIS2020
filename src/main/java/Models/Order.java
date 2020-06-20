@@ -11,11 +11,12 @@ public class Order {
     private String address;
     private String date;
     private String payment;
+    private String mail;
     private String cardNumber="";
     private String expirationDate="";
     private String cvv="";
 
-    public Order(String id, String status, String product, int quantity, String name, String address, String date, String payment) {
+    public Order(String id, String status, String product, int quantity, String name, String address, String date, String payment,String mail) {
         this.id = id;
         this.status = status;
         this.product = product;
@@ -24,9 +25,10 @@ public class Order {
         this.address = address;
         this.date = date;
         this.payment = payment;
+        this.mail=mail;
     }
 
-    public Order(String id, String status, String product, int quantity, String name, String address, String date, String payment, String cardNumber, String expirationDate, String cvv) {
+    public Order(String id, String status, String product, int quantity, String name, String address, String date, String payment, String mail, String cardNumber, String expirationDate, String cvv) {
         this.id = id;
         this.status = status;
         this.product = product;
@@ -35,6 +37,7 @@ public class Order {
         this.address = address;
         this.date = date;
         this.payment = payment;
+        this.mail=mail;
         this.cardNumber = cardNumber;
         this.expirationDate = expirationDate;
         this.cvv = cvv;
@@ -96,6 +99,14 @@ public class Order {
         this.payment = payment;
     }
 
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
     public String getCardNumber() {
         return cardNumber;
     }
@@ -140,6 +151,7 @@ public class Order {
                 address.equals(order.address) &&
                 date.equals(order.date) &&
                 payment.equals(order.payment) &&
+                mail.equals(order.mail) &&
                 cardNumber.equals(order.cardNumber) &&
                 expirationDate.equals(order.expirationDate) &&
                 cvv.equals(order.cvv) &&
@@ -154,6 +166,7 @@ public class Order {
         result = result*31 + address.hashCode();
         result = result*31 + date.hashCode();
         result = result*31 + payment.hashCode();
+        result = result*31 + mail.hashCode();
         result = result*31 + cardNumber.hashCode();
         result = result*31 + expirationDate.hashCode();
         result = result*31 + cvv.hashCode();
@@ -173,6 +186,7 @@ public class Order {
                 ", address='" + address + '\'' +
                 ", date='" + date + '\'' +
                 ", payment='" + payment + '\'' +
+                ", mail='" + mail + '\'' +
                 ", cardNumber='" + cardNumber + '\'' +
                 ", expirationDate='" + expirationDate + '\'' +
                 ", cvv='" + cvv + '\'' +
