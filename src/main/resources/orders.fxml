@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.OrdersController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2adbbe;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.OrdersController">
    <children>
       <Button layoutX="38.0" layoutY="23.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
-      <TableView fx:id="tableView" layoutX="111.0" layoutY="58.0" prefHeight="200.0" prefWidth="235.0">
+      <TableView fx:id="tableView" layoutX="111.0" layoutY="58.0" prefHeight="200.0" prefWidth="235.0" style="-fx-background-color: #ffcc00;">
         <columns>
-          <TableColumn fx:id="productColumn" prefWidth="150.6666717529297" text="Product" />
-          <TableColumn fx:id="statusColumn" prefWidth="83.33334350585938" text="Status" />
+          <TableColumn fx:id="productColumn" prefWidth="150.6666717529297" style="-fx-background-color: #ffcc00;" text="Product" />
+          <TableColumn fx:id="statusColumn" prefWidth="83.33334350585938" style="-fx-background-color: #ffcc00;" text="Status" />
         </columns>
       </TableView>
       <Button layoutX="391.0" layoutY="58.0" mnemonicParsing="false" onAction="#orderDetails" text="Order details" />
       <Button layoutX="408.0" layoutY="126.0" mnemonicParsing="false" onAction="#acceptButton" text="Accept" />
       <Button layoutX="406.0" layoutY="174.0" mnemonicParsing="false" onAction="#declineButton" text="Decline" />
+      <ImageView fitHeight="32.0" fitWidth="55.0" layoutX="476.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-checkmark-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="101.0" layoutX="476.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-delete-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="48.0" fitWidth="85.0" layoutX="476.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-purchase-order-100.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

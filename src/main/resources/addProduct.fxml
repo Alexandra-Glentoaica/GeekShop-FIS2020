@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddProductController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2adbbe;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddProductController">
    <children>
       <Button layoutX="30.0" layoutY="22.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
       <Label layoutX="103.0" layoutY="84.0" text="Name:" />
@@ -14,9 +15,34 @@
       <TextField fx:id="priceField" layoutX="180.0" layoutY="111.0" />
       <TextField fx:id="typeField" layoutX="180.0" layoutY="141.0" />
       <TextField fx:id="quantityField" layoutX="180.0" layoutY="171.0" />
-      <Button layoutX="229.0" layoutY="226.0" mnemonicParsing="false" onAction="#okButton" text="OK" />
+      <Button layoutX="296.0" layoutY="226.0" mnemonicParsing="false" onAction="#okButton" text="OK" />
       <Label fx:id="alertLabel" layoutX="103.0" layoutY="272.0" />
-      <Label layoutX="21.0" layoutY="263.0" text="Available types: Books, Funko-Pop Figurines, Geek Accessories, Stationery, Board Games" />
-      <Label fx:id="alertLabel" layoutX="21.0" layoutY="289.0" />
+      <Label layoutX="67.0" layoutY="280.0" text="Available types: Books, Funko-Pop Figurines, Geek Accessories, Stationery, Board Games." />
+      <Label fx:id="alertLabel" layoutX="66.0" layoutY="308.0" prefHeight="25.0" prefWidth="123.0" />
+      <ImageView fitHeight="25.0" fitWidth="41.0" layoutX="71.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-dog-tag-100.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="33.0" layoutX="71.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-expensive-price-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="35.0" layoutX="66.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-product-100.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="71.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-numbers-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="41.0" layoutX="343.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-ok-100.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

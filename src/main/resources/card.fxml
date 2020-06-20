@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CardController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2adbbe;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CardController">
    <children>
-      <Button layoutX="39.0" layoutY="33.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+      <Button layoutX="25.0" layoutY="22.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
       <Label layoutX="114.0" layoutY="114.0" text="Card Number:" />
       <Label layoutX="114.0" layoutY="146.0" text="Expiration Date:" />
       <Label layoutX="114.0" layoutY="177.0" text="CVV:" />
       <PasswordField fx:id="cvvField" layoutX="226.0" layoutY="173.0" />
       <TextField fx:id="dateField" layoutX="226.0" layoutY="142.0" />
       <TextField fx:id="numberField" layoutX="226.0" layoutY="110.0" />
-      <Button layoutX="401.0" layoutY="235.0" mnemonicParsing="false" onAction="#okButton" text="OK" />
+      <Button layoutX="342.0" layoutY="235.0" mnemonicParsing="false" onAction="#okButton" prefHeight="25.0" prefWidth="55.0" text="OK" />
       <Label fx:id="alertLabel" layoutX="66.0" layoutY="239.0" />
+      <ImageView fitHeight="47.0" fitWidth="55.0" layoutX="346.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-insert-credit-card-64.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="41.0" layoutX="66.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-card-verification-value-100.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="41.0" layoutX="70.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-mastercard-credit-card-64.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

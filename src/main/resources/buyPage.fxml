@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BuyPageController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2adbbe;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BuyPageController">
    <children>
       <Label layoutX="80.0" layoutY="103.0" text="Selected product:" />
       <Label fx:id="label" layoutX="214.0" layoutY="103.0" />
       <Label layoutX="80.0" layoutY="132.0" text="Insert quantity:" />
-      <TextField fx:id="textField" layoutX="214.0" layoutY="128.0" />
-      <Button layoutX="379.0" layoutY="214.0" mnemonicParsing="false" onAction="#formButton" text="To buy form" />
+      <TextField fx:id="textField" layoutX="205.0" layoutY="128.0" />
+      <Button layoutX="379.0" layoutY="214.0" mnemonicParsing="false" onAction="#formButton" text="Order Form" />
       <Label fx:id="alertLabel" layoutX="78.0" layoutY="218.0" />
-      <Button layoutX="52.0" layoutY="30.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+      <Button layoutX="26.0" layoutY="25.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+      <ImageView fitHeight="54.0" fitWidth="79.0" layoutX="467.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-check-book-100.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="41.0" layoutX="35.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-numbers-48.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

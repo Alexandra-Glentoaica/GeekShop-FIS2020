@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DoneController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2addbe;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DoneController">
    <children>
       <Button layoutX="274.0" layoutY="208.0" mnemonicParsing="false" onAction="#okButton" text="OK" />
       <Label fx:id="label" layoutX="210.0" layoutY="70.0" text="Order is placed!">
@@ -12,5 +13,15 @@
             <Font size="23.0" />
          </font>
       </Label>
+      <ImageView fitHeight="49.0" fitWidth="106.0" layoutX="385.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-completed-task-64.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="42.0" layoutX="317.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-ok-100.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
