@@ -117,4 +117,24 @@ public class FormController {
     public static String getMail() {
         return mail;
     }
+
+    public static void setName(String name) {
+        FormController.name = name;
+    }
+
+    public static void setAddress(String address) {
+        FormController.address = address;
+    }
+
+    public static void setDate(String date) {
+        FormController.date = date;
+    }
+
+    public static void setPayment(String payment) {
+        FormController.payment = payment;
+    }
+
+    public static void setMail(String mail) {
+        FormController.mail = mail;
+    }
 }

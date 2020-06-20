@@ -71,4 +71,8 @@ public class BuyPageController {
     public static int getQuantity() {
         return quantity;
     }
+
+    public static void setQuantity(int quantity) {
+        BuyPageController.quantity = quantity;
+    }
 }
