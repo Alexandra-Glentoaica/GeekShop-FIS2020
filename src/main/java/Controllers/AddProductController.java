@@ -29,6 +29,12 @@ public class AddProductController {
     private TextField quantityField;
     @FXML
     private Label alertLabel;
+    @FXML
+    private Label integerLabel;
+
+    public void initialize(){
+        integerLabel.setText("");
+    }
 
     public void backButton(){
         try{
@@ -45,46 +51,48 @@ public class AddProductController {
     public void okButton(){
         ArrayList<Product> p = ProductServices.getProducts();
 
-        try{
-            for(Product i:p){
-                if(i.getName().equals(nameField.getText())){
-                    alertLabel.setText("Product already exists!");
+        try {
+            for (Product i : p) {
+                if (i.getName().equals(nameField.getText())) {
                     throw new ProductAlreadyExists();
                 }
             }
+
 
             name = nameField.getText();
             price = Integer.parseInt(priceField.getText());
             type = typeField.getText();
             quantity = Integer.parseInt(quantityField.getText());
 
-            if(type.equals("Books")){
-                try{
-                    Stage primaryStage = (Stage)nameField.getScene().getWindow();
+            if (type.equals("Books")) {
+                try {
+                    Stage primaryStage = (Stage) nameField.getScene().getWindow();
                     Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("addBook.fxml"));
                     primaryStage.setTitle("Add Book");
-                    primaryStage.setScene(new Scene(root,600,500));
+                    primaryStage.setScene(new Scene(root, 600, 500));
                     primaryStage.show();
-                }catch (Exception e){
+                } catch (Exception e) {
                     System.out.println(e);
                 }
-            }else{
-                if(type.equals("Board Games")||type.equals("Stationery")||type.equals("Geek Accessories")||type.equals("Funko-Pop Figurines")){
-                    try{
-                        Stage primaryStage = (Stage)nameField.getScene().getWindow();
+            } else {
+                if (type.equals("Board Games") || type.equals("Stationery") || type.equals("Geek Accessories") || type.equals("Funko-Pop Figurines")) {
+                    try {
+                        Stage primaryStage = (Stage) nameField.getScene().getWindow();
                         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("addItem.fxml"));
                         primaryStage.setTitle("Add Item");
-                        primaryStage.setScene(new Scene(root,600,500));
+                        primaryStage.setScene(new Scene(root, 600, 500));
                         primaryStage.show();
-                    }catch (Exception e) {
+                    } catch (Exception e) {
                         System.out.println(e);
                     }
-                }else{
+                } else {
                     alertLabel.setText("Invalid type!");
                 }
             }
+        }catch(NumberFormatException x) {
+            integerLabel.setText("Price and quantity should be integers!");
         }catch (Exception e){
-            System.out.println(e);
+            alertLabel.setText("Product already exists!");
         }
     }
 
