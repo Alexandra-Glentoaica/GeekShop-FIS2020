@@ -123,4 +123,8 @@ public class ShopPageController {
     public static Product getSelected() {
         return selected;
     }
+
+    public static void setSelected(Product selected) {
+        ShopPageController.selected = selected;
+    }
 }

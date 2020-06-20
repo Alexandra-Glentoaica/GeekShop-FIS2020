@@ -13,11 +13,11 @@ public class BuyPageController {
     private static int quantity;
 
     @FXML
-    private Label label;
+    Label label;
     @FXML
-    private Label alertLabel;
+    Label alertLabel;
     @FXML
-    private TextField textField;
+    TextField textField;
 
 
     @FXML
@@ -62,7 +62,7 @@ public class BuyPageController {
                 }
             }
         } catch (Exception e){
-            alertLabel.setText("Price should be integer!");
+            alertLabel.setText("Quantity should be integer!");
         }
 
 
