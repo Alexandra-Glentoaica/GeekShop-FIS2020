@@ -14,11 +14,11 @@ import java.util.ArrayList;
 
 public class AddItemController {
     @FXML
-    private TextField materialField;
+    TextField materialField;
     @FXML
-    private TextField colorField;
+    TextField colorField;
     @FXML
-    private TextField sizeField;
+    TextField sizeField;
 
     public void backButton(){
         try{
