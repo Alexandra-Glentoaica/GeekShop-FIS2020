@@ -1,6 +1,7 @@
 import Models.Product;
 import Services.ClientServices;
 import Services.OrderServices;
+import Services.ProductServices;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +17,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        ClientServices.setPath("src/main/resources/users.json");
+        OrderServices.setPath("src/main/resources/orders.json");
+        ProductServices.setPath("src/main/resources/products.json");
+
         OrderServices.loadOrders();
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));

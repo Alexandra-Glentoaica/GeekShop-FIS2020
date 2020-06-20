@@ -10,13 +10,14 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 
 public class OrderServices {
+    private static String path;
     private static ArrayList<Order> orders = new ArrayList<>();
 
     public static void loadOrders(){
         try {
             orders=new ArrayList<>();
             JSONParser jp = new JSONParser();
-            FileReader fr = new FileReader("src/main/resources/orders.json");
+            FileReader fr = new FileReader(path);
             Object obj = jp.parse(fr);
             JSONArray ja = (JSONArray) obj;
 
@@ -32,7 +33,7 @@ public class OrderServices {
     public static void writeOrders(){
         FileWriter fw = null;
         try{
-            fw = new FileWriter("src/main/resources/orders.json");
+            fw = new FileWriter(path);
 
             JSONArray ja = new JSONArray();
 
@@ -70,5 +71,9 @@ public class OrderServices {
 
     public static ArrayList<Order> getOrders() {
         return orders;
+    }
+
+    public static void setPath(String path) {
+        OrderServices.path = path;
     }
 }
