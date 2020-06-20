@@ -29,5 +29,6 @@
             <Image url="@icons8-ok-100.png" />
          </image>
       </ImageView>
+      <Label fx:id="alertLabel" layoutX="73.0" layoutY="224.0" text="Label" />
    </children>
 </AnchorPane>

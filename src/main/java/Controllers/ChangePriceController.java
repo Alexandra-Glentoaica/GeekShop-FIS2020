@@ -19,8 +19,11 @@ public class ChangePriceController {
     private TextField price;
     @FXML
     private Label priceLabel;
+    @FXML
+    private Label alertLabel;
 
     public void initialize(){
+        alertLabel.setText("");
         p = AdminPageController.getSelected();
 
         nameLabel.setText(p.getName());
@@ -40,10 +43,13 @@ public class ChangePriceController {
     }
 
     public void okButton(){
-        p.setPrice(Integer.parseInt(price.getText()));
+        try {
+            p.setPrice(Integer.parseInt(price.getText()));
+            ProductServices.writeProducts();
 
-        ProductServices.writeProducts();
-
-        this.initialize();
+            this.initialize();
+        }catch (Exception e){
+            alertLabel.setText("Price should be integer!");
+        }
     }
 }

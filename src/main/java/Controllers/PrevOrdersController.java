@@ -36,6 +36,7 @@ public class PrevOrdersController {
 
         tableView.setItems(FXCollections.observableArrayList(sortedOrders));
         tableColumn.setCellValueFactory(new PropertyValueFactory<Order,String>("product"));
+        tableView.getSelectionModel().select(0);
     }
 
     @FXML
