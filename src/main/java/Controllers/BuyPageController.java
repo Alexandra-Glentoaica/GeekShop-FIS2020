@@ -19,9 +19,11 @@ public class BuyPageController {
     @FXML
     private TextField textField;
 
+
     @FXML
     public void initialize(){
         label.setText(ShopPageController.getSelected().getName());
+        alertLabel.setText("");
     }
 
     @FXML
@@ -39,25 +41,31 @@ public class BuyPageController {
 
     @FXML
     public void formButton(){
-        quantity = Integer.parseInt(textField.getText());
-        if(quantity<=ShopPageController.getSelected().getQuantity()){
-            try{
-                Stage primaryStage = (Stage)label.getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("form.fxml"));
-                primaryStage.setTitle("Form Page");
-                primaryStage.setScene(new Scene(root,600,500));
-                primaryStage.show();
-            }catch (Exception e){
-                System.out.println(e);
+        try {
+            quantity = Integer.parseInt(textField.getText());
+            if (quantity <= ShopPageController.getSelected().getQuantity()) {
+                try {
+                    Stage primaryStage = (Stage) label.getScene().getWindow();
+                    Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("form.fxml"));
+                    primaryStage.setTitle("Form Page");
+                    primaryStage.setScene(new Scene(root, 600, 500));
+                    primaryStage.show();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            } else {
+                alertLabel.setText("Not enough stock!");
+                try {
+                    throw new InssuficentStock();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
             }
-        }else{
-            alertLabel.setText("Not enough stock!");
-            try{
-                throw new InssuficentStock();
-            }catch (Exception e){
-                System.out.println(e);
-            }
+        } catch (Exception e){
+            alertLabel.setText("Price should be integer!");
         }
+
+
     }
 
     public static int getQuantity() {
