@@ -60,7 +60,7 @@ public class SignUpController {
         try {
             Stage primaryStage = (Stage) idField.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
-            primaryStage.setTitle("Sign Up Screen");
+            primaryStage.setTitle("Login Screen");
             primaryStage.setScene(new Scene(root, 600, 500));
             primaryStage.show();
         }catch (Exception e){
