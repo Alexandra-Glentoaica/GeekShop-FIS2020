@@ -111,4 +111,20 @@ public class AddProductController {
     public static int getQuantity() {
         return quantity;
     }
+
+    public static void setName(String name) {
+        AddProductController.name = name;
+    }
+
+    public static void setPrice(int price) {
+        AddProductController.price = price;
+    }
+
+    public static void setType(String type) {
+        AddProductController.type = type;
+    }
+
+    public static void setQuantity(int quantity) {
+        AddProductController.quantity = quantity;
+    }
 }

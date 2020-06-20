@@ -14,11 +14,11 @@ import java.util.ArrayList;
 
 public class AddBookController {
     @FXML
-    private TextField authorField;
+    TextField authorField;
     @FXML
-    private TextField languageField;
+    TextField languageField;
     @FXML
-    private TextField publisherField;
+    TextField publisherField;
 
     public void backButton(){
         try{
