@@ -20,9 +20,12 @@ public class FormController {
     private static String address;
     private static String date;
     private static String payment;
+    private static String mail;
 
     @FXML
     private TextField nameField;
+    @FXML
+    private TextField mailField;
     @FXML
     private TextField adressField;
     @FXML
@@ -57,11 +60,12 @@ public class FormController {
         name = nameField.getText();
         address = adressField.getText();
         date = dateField.getText();
+        mail = mailField.getText();
 
-        if(!nameField.getText().equals("")&&!adressField.getText().equals("")&&!dateField.getText().equals("")) {
+        if(!nameField.getText().equals("")&&!adressField.getText().equals("")&&!dateField.getText().equals("")&&!mailField.getText().equals("")) {
             if (payment.equals("Cash")) {
                 ArrayList<Order> orders = OrderServices.getOrders();
-                Order o = new Order(LoginController.getId(), "pending", ShopPageController.getSelected().getName(), BuyPageController.getQuantity(), name, address, date, payment);
+                Order o = new Order(LoginController.getId(), "pending", ShopPageController.getSelected().getName(), BuyPageController.getQuantity(), name, address, date, payment,mail);
                 orders.add(o);
                 OrderServices.writeOrders();
 
@@ -108,5 +112,9 @@ public class FormController {
 
     public static String getPayment() {
         return payment;
+    }
+
+    public static String getMail() {
+        return mail;
     }
 }

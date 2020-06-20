@@ -22,7 +22,7 @@ public class OrderServices {
 
             for(Object order:ja){
                 JSONObject jo = (JSONObject) order;
-                orders.add(new Order(jo.get("id").toString(), jo.get("status").toString(), jo.get("product").toString(), Integer.parseInt(jo.get("quantity").toString()), jo.get("name").toString(), jo.get("address").toString(), jo.get("date").toString(), jo.get("payment").toString(), jo.get("cardNumber").toString(), jo.get("expirationDate").toString(), jo.get("cvv").toString()));
+                orders.add(new Order(jo.get("id").toString(), jo.get("status").toString(), jo.get("product").toString(), Integer.parseInt(jo.get("quantity").toString()), jo.get("name").toString(), jo.get("address").toString(), jo.get("date").toString(), jo.get("payment").toString(), jo.get("mail").toString(), jo.get("cardNumber").toString(), jo.get("expirationDate").toString(), jo.get("cvv").toString()));
             }
         }catch (Exception e){
             System.out.println(e);
@@ -47,6 +47,7 @@ public class OrderServices {
                 jo.put("address",o.getAddress());
                 jo.put("date",o.getDate());
                 jo.put("payment",o.getPayment());
+                jo.put("mail",o.getMail());
                 jo.put("cardNumber",o.getCardNumber());
                 jo.put("expirationDate",o.getExpirationDate());
                 jo.put("cvv",o.getCvv());

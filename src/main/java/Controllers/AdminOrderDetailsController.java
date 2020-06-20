@@ -26,6 +26,9 @@ public class AdminOrderDetailsController {
     private TextField payment;
 
     @FXML
+    private TextField mail;
+
+    @FXML
     public void initialize(){
         Order selected = OrdersController.getSelected();
 
@@ -36,6 +39,7 @@ public class AdminOrderDetailsController {
         address.setText(selected.getAddress());
         date.setText(selected.getDate());
         payment.setText(selected.getPayment());
+        mail.setText(selected.getMail());
     }
 
     @FXML
