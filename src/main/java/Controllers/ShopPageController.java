@@ -63,6 +63,7 @@ public class ShopPageController {
 
         tableView.setItems(FXCollections.observableArrayList(sortedProducts));
         nameColumn.setCellValueFactory(new PropertyValueFactory<Product,String>("name"));
+        tableView.getSelectionModel().select(0);
     }
 
     @FXML

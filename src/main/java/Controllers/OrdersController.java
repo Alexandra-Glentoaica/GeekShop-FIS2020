@@ -40,6 +40,7 @@ public class OrdersController {
         tableView.setItems(FXCollections.observableArrayList(sortedOrders));
         productColumn.setCellValueFactory(new PropertyValueFactory<Order,String>("product"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<Order,String>("status"));
+        tableView.getSelectionModel().select(0);
     }
 
     public void backButton(){

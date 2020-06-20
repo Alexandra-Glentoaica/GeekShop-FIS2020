@@ -32,6 +32,7 @@ public class AdminPageController {
         tableView.setItems(FXCollections.observableArrayList(products));
         productColumn.setCellValueFactory(new PropertyValueFactory<Product,String>("name"));
         quantityColumn.setCellValueFactory(new PropertyValueFactory<Product,String>("quantity"));
+        tableView.getSelectionModel().select(0);
     }
 
     public void logOutButton(){
