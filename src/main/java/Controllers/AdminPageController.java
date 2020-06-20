@@ -19,11 +19,11 @@ public class AdminPageController {
     private static Product selected;
 
     @FXML
-    private TableView<Product> tableView;
+    TableView<Product> tableView;
     @FXML
-    private TableColumn<Product,String> productColumn;
+    TableColumn<Product,String> productColumn;
     @FXML
-    private TableColumn<Product,String> quantityColumn;
+    TableColumn<Product,String> quantityColumn;
 
     public void initialize(){
         ProductServices.loadProducts();
