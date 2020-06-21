@@ -23,17 +23,17 @@ public class FormController {
     private static String mail;
 
     @FXML
-    private TextField nameField;
+    TextField nameField;
     @FXML
-    private TextField mailField;
+    TextField mailField;
     @FXML
-    private TextField adressField;
+    TextField adressField;
     @FXML
-    private TextField dateField;
+    TextField dateField;
     @FXML
-    private ChoiceBox choiceBox;
+    ChoiceBox choiceBox;
     @FXML
-    private Label alertLabel;
+    Label alertLabel;
 
     @FXML
     public void initialize() {
