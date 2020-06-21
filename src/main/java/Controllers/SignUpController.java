@@ -17,14 +17,14 @@ import java.util.ArrayList;
 
 public class SignUpController {
     @FXML
-    private TextField idField;
+    TextField idField;
     @FXML
-    private PasswordField passField;
+    PasswordField passField;
     @FXML
-    private ChoiceBox<String> role;
+    ChoiceBox<String> role;
 
     @FXML
-    private Label label1;
+    Label label1;
 
     @FXML
     public void initialize(){
