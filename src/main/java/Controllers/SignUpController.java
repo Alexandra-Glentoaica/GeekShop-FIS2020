@@ -52,6 +52,7 @@ public class SignUpController {
                 throw new UserAlreadyExistsException();
             }else{
                 clients.add(c);
+                label1.setText("Account created!");
             }
         }catch (Exception e){
             label1.setText("This username is already taken!");
