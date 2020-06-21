@@ -20,11 +20,11 @@ public class OrdersController {
     private static Order selected;
 
     @FXML
-    private TableView<Order> tableView;
+    TableView<Order> tableView;
     @FXML
-    private TableColumn<Order,String> productColumn;
+    TableColumn<Order,String> productColumn;
     @FXML
-    private TableColumn<Order,String> statusColumn;
+    TableColumn<Order,String> statusColumn;
 
     public void initialize(){
         OrderServices.loadOrders();
