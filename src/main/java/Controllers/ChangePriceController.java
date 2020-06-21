@@ -14,13 +14,13 @@ public class ChangePriceController {
     private Product p;
 
     @FXML
-    private Label nameLabel;
+    Label nameLabel;
     @FXML
-    private TextField price;
+    TextField price;
     @FXML
-    private Label priceLabel;
+    Label priceLabel;
     @FXML
-    private Label alertLabel;
+    Label alertLabel;
 
     public void initialize(){
         alertLabel.setText("");
@@ -51,5 +51,39 @@ public class ChangePriceController {
         }catch (Exception e){
             alertLabel.setText("Price should be integer!");
         }
+    }
+
+
+
+    public Label getNameLabel() {
+        return nameLabel;
+    }
+
+    public void setNameLabel(Label nameLabel) {
+        this.nameLabel = nameLabel;
+    }
+
+    public TextField getPrice() {
+        return price;
+    }
+
+    public void setPrice(TextField price) {
+        this.price = price;
+    }
+
+    public Label getPriceLabel() {
+        return priceLabel;
+    }
+
+    public void setPriceLabel(Label priceLabel) {
+        this.priceLabel = priceLabel;
+    }
+
+    public Label getAlertLabel() {
+        return alertLabel;
+    }
+
+    public void setAlertLabel(Label alertLabel) {
+        this.alertLabel = alertLabel;
     }
 }
