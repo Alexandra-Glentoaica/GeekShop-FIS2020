@@ -18,13 +18,13 @@ import java.util.ArrayList;
 
 public class CardController {
     @FXML
-    private TextField numberField;
+    TextField numberField;
     @FXML
-    private TextField dateField;
+    TextField dateField;
     @FXML
-    private PasswordField cvvField;
+    PasswordField cvvField;
     @FXML
-    private Label alertLabel;
+    Label alertLabel;
 
     @FXML
     public void backButton(){

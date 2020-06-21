@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 
 public class ProductServices {
+    private static String path;
     private static ArrayList<Product> products = new ArrayList<>();
 
     public static void loadProducts(){
@@ -17,7 +18,7 @@ public class ProductServices {
             products = new ArrayList<>();
 
             JSONParser jp = new JSONParser();
-            FileReader fr = new FileReader("src/main/resources/products.json");
+            FileReader fr = new FileReader(path);
             Object obj = jp.parse(fr);
             JSONArray ja = (JSONArray) obj;
 
@@ -56,7 +57,7 @@ public class ProductServices {
     public static void writeProducts(){
         FileWriter fw = null;
         try{
-            fw = new FileWriter("src/main/resources/products.json");
+            fw = new FileWriter(path);
 
             JSONArray ja = new JSONArray();
 
@@ -95,5 +96,9 @@ public class ProductServices {
 
     public static ArrayList<Product> getProducts() {
         return products;
+    }
+
+    public static void setPath(String path) {
+        ProductServices.path = path;
     }
 }

@@ -23,17 +23,17 @@ public class FormController {
     private static String mail;
 
     @FXML
-    private TextField nameField;
+    TextField nameField;
     @FXML
-    private TextField mailField;
+    TextField mailField;
     @FXML
-    private TextField adressField;
+    TextField adressField;
     @FXML
-    private TextField dateField;
+    TextField dateField;
     @FXML
-    private ChoiceBox choiceBox;
+    ChoiceBox choiceBox;
     @FXML
-    private Label alertLabel;
+    Label alertLabel;
 
     @FXML
     public void initialize() {
@@ -116,5 +116,25 @@ public class FormController {
 
     public static String getMail() {
         return mail;
+    }
+
+    public static void setName(String name) {
+        FormController.name = name;
+    }
+
+    public static void setAddress(String address) {
+        FormController.address = address;
+    }
+
+    public static void setDate(String date) {
+        FormController.date = date;
+    }
+
+    public static void setPayment(String payment) {
+        FormController.payment = payment;
+    }
+
+    public static void setMail(String mail) {
+        FormController.mail = mail;
     }
 }

@@ -20,11 +20,11 @@ public class LoginController {
     private static String id;
 
     @FXML
-    private TextField idEntry;
+    TextField idEntry;
     @FXML
-    private PasswordField passEntry;
+    PasswordField passEntry;
     @FXML
-    private Label label;
+    Label label;
 
     @FXML
     public void initialize(){
@@ -97,5 +97,29 @@ public class LoginController {
 
     public static void setId(String id) {
         LoginController.id = id;
+    }
+
+    public TextField getIdEntry() {
+        return idEntry;
+    }
+
+    public void setIdEntry(TextField idEntry) {
+        this.idEntry = idEntry;
+    }
+
+    public PasswordField getPassEntry() {
+        return passEntry;
+    }
+
+    public void setPassEntry(PasswordField passEntry) {
+        this.passEntry = passEntry;
+    }
+
+    public Label getLabel() {
+        return label;
+    }
+
+    public void setLabel(Label label) {
+        this.label = label;
     }
 }

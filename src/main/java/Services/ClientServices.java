@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Base64;
 
 public class ClientServices {
+    private static String path;
     private static ArrayList<Client> clients;
 
     public static void loadClients() {
@@ -18,7 +19,7 @@ public class ClientServices {
             clients = new ArrayList<>();
 
             JSONParser jp = new JSONParser();
-            FileReader fr = new FileReader("src/main/resources/users.json");
+            FileReader fr = new FileReader(path);
             Object obj = jp.parse(fr);
             JSONArray ja = (JSONArray) obj;
 
@@ -40,7 +41,7 @@ public class ClientServices {
     public static void writeClients() {
         FileWriter fw = null;
         try {
-            fw = new FileWriter("src/main/resources/users.json");
+            fw = new FileWriter(path);
 
             JSONArray ja = new JSONArray();
 
@@ -73,5 +74,9 @@ public class ClientServices {
 
     public static void setClients(ArrayList<Client> clients) {
         ClientServices.clients = clients;
+    }
+
+    public static void setPath(String path) {
+        ClientServices.path = path;
     }
 }

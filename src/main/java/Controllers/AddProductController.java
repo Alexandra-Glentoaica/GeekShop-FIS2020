@@ -20,17 +20,17 @@ public class AddProductController {
     private static int quantity;
 
     @FXML
-    private TextField nameField;
+    TextField nameField;
     @FXML
-    private TextField priceField;
+    TextField priceField;
     @FXML
-    private TextField typeField;
+    TextField typeField;
     @FXML
-    private TextField quantityField;
+    TextField quantityField;
     @FXML
-    private Label alertLabel;
+    Label alertLabel;
     @FXML
-    private Label integerLabel;
+    Label integerLabel;
 
     public void initialize(){
         integerLabel.setText("");
@@ -110,5 +110,21 @@ public class AddProductController {
 
     public static int getQuantity() {
         return quantity;
+    }
+
+    public static void setName(String name) {
+        AddProductController.name = name;
+    }
+
+    public static void setPrice(int price) {
+        AddProductController.price = price;
+    }
+
+    public static void setType(String type) {
+        AddProductController.type = type;
+    }
+
+    public static void setQuantity(int quantity) {
+        AddProductController.quantity = quantity;
     }
 }
